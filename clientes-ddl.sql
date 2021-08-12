@@ -119,7 +119,7 @@ create table reporte(
   peso              number(5, 2)     not null,
   masa_corporal     number(5, 2)     not null,
   estatura          number(4, 1),
-  cliente_id        number(10, 0),
+  cliente_id        number(10, 0)    not null,
   constraint reporte_pk primary key (reporte_id) 
   using index (
     create unique index reporte_pk on reporte(reporte_id)
@@ -136,13 +136,12 @@ tablespace clientes_tbs;
 -- table: sesion_dispositivo 
 --
 create table sesion_dispositivo(
-  sesion_dispositivo_id    number(10, 0)    not null,
-  dispositivo_id           number(10, 0)    not null,
   sesion_id                number(10, 0)    not null,
-  constraint sesion_dispositivo_pk primary key (sesion_dispositivo_id)
+  dispositivo_id           number(10, 0)    not null,
+  constraint sesion_dispositivo_pk primary key (sesion_id, dispositivo_id)
   using index (
     create unique index sesion_dispositivo_pk 
-    on sesion_dispositivo(sesion_dispositivo_id)
+    on sesion_dispositivo(sesion_id, dispositivo_id)
     tablespace clientes_idx_tbs
   ), 
   constraint se_di_sesion_id_fk foreign key (sesion_id)

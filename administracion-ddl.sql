@@ -258,6 +258,7 @@ tablespace administracion_tbs;
 --
 create table multimedia(
   multimedia_id    number(10, 0)    not null,
+  archivo          blob             not null,
   tipo_archivo     char(1)          not null,
   vigencia         date             not null,
   fecha_fin        date             not null,
@@ -276,13 +277,12 @@ tablespace administracion_tbs;
 -- table: sala_disciplina 
 --
 create table sala_disciplina(
-  sala_disciplina_id    number(10, 0)    not null,
   disciplina_id         number(10, 0)    not null,
   sala_id               number(10, 0)    not null,
-  constraint sala_disciplina_pk primary key (sala_disciplina_id)
+  constraint sala_disciplina_pk primary key (disciplina_id, sala_id)
   using index (
     create unique index sala_disciplina_pk 
-    on sala_disciplina(sala_disciplina_id)
+    on sala_disciplina(disciplina_id, sala_id)
     tablespace administracion_idx_tbs
   ), 
   constraint sala_dis_disciplina_id_fk foreign key (sala_id)
