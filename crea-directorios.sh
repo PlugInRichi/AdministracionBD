@@ -1,6 +1,6 @@
 # @Autor  García García Ricardo - Humberto Serafín Castillo López
 # @Fecha 3/08/2021
-# @Descripcion Proyecto Final - Creación de directorios. Ejecutar como sudo
+# @Descripcion Proyecto Final - Creación de directorios. Ejecutar como root
 
 echo "Creación de carpeta base"
 base=$ORACLE_BASE/oradata/GACAPROY
@@ -18,7 +18,7 @@ mkdir disk_2 disk_3 disk_4 disk_5 disk_6 disk_7 disk_8 disk_9
 
 #Comprueba la creación de los discos
 numImg=$(ls | wc -l)
-if [ $numImg -ne 8 ]; then
+if [ $numImg -ne 9 ]; then
   echo "No se pudieron crear todos los archivos"
   exit 1
 fi

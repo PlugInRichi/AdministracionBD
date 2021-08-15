@@ -1,9 +1,14 @@
 # @Autor García García Ricardo - Humberto Serafín Castillo López
 # @Fecha 3/07/2021
-# @Descripcion:
+# @Descripcion: Creación del archivo de passwords y archivo de parámetros
+#               Ejecutar como usuario oracle 
+
+#Se crea variable de entorno
+echo "Creando variable de entorno ORACLE_SID..."
+export ORACLE_SID=gacaproy
 
 rutaArchivoPass=$ORACLE_HOME/dbs/orapwgacaproy
-rutaArchivoParam=$ORACLE_HOME/dbs/orapwgacaproy.ora
+rutaArchivoParam=$ORACLE_HOME/dbs/initgacaproy.ora
 
 orapwd FILE=$rutaArchivoPass \
   force=y \
