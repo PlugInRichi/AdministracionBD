@@ -3,7 +3,7 @@
 --@Descripción: Proyecto Final - Creacion de Usuarios y roles
 
 Prompt Conectando como sysdba
-connect sys/system2 as sysdba
+connect sys/system as sysdba
 
 --Estos usuarios se encargarán de administrar los TBS de su módulo
 --correspondiente
