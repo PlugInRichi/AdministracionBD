@@ -25,7 +25,7 @@ create table cliente(
     tablespace clientes_idx_tbs
   )
 ) lob (foto) store as basicfile (tablespace clientes_blob_tbs)
-tablespace clientes_tbs;
+tablespace clientes_ecnrypt_tbs;
 
 --
 -- table: sensor
