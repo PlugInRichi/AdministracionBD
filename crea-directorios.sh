@@ -14,7 +14,7 @@ cd $base
 #Directorio para wallets
 mkdir -p disk_1/wallets
 #Crea directorios para discos
-mkdir disk_2 disk_3 disk_4 disk_5 disk_6 disk_7 disk_8
+mkdir disk_2 disk_3 disk_4 disk_5 disk_6 disk_7 disk_8 disk_9
 
 #Comprueba la creación de los discos
 numImg=$(ls | wc -l)
