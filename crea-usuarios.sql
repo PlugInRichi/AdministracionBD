@@ -1,5 +1,5 @@
---@Autor: Rodrigo Lopez López - Carlos Giovanni Martínez Gutiérrez
---@Fecha creación: 02/02/2021
+--@Autor  García García Ricardo - Humberto Serafín Castillo López
+--@Fecha creación: 15/07/2021
 --@Descripción: Proyecto Final - Creacion de Usuarios y roles
 
 Prompt Conectando como sysdba
@@ -7,30 +7,13 @@ connect sys/system2 as sysdba
 
 --Estos usuarios se encargarán de administrar los TBS de su módulo
 --correspondiente
-Prompt Creando usuario administrador_gimnasios
-create user administrador_gimnasios identified by gimnasios
+Prompt Creando usuario gimnasios_admin
+create user gimnasios_admin identified by gimnasios
 default tablespace administracion_tbs quota unlimited on administracion_tbs;
 
-Prompt Creando usuario administrador_clientes
-create user administrador_clientes identified by clientes
+Prompt Creando usuario clientes_admin
+create user clientes_admin identified by clientes
 default tablespace clientes_tbs quota unlimited on clientes_tbs;
-
---Estos usuarios se encargarán de hacer registros en sus respectivos módulos,
---son ejemplos, podrían crearse más
-
-Prompt Creando usuario cliente_01
-create user cliente_01 identified by cliente
-default tablespace clientes_tbs quota unlimited on clientes_tbs;
-
-Prompt Creando usuario gimnasio_01
-create user gimnasio_01 identified by gimnasio
-default tablespace administracion_tbs quota unlimited on administracion_tbs;
-
---create role user;
---grant select, insert, update, delete on
-
---Creación de roles
---Eliminado rol admin en caso de existir
 
 
 Prompt Creando rol admin
@@ -40,8 +23,13 @@ grant create session, create table, create view, create procedure,
   create sequence, create trigger, create index to rol_admin;
 
 Prompt Asignamos rol a los usuarios
-grant rol_admin to administrador_gimnasios;
-grant rol_admin to administrador_clientes;
+grant rol_admin to gimnasios_admin;
+grant rol_admin to clientes_admin;
 
 
---Permisos para los índices 
+alter user gimnasios_admin quota unlimited on administracion_idx_tbs;
+alter user gimnasios_admin quota unlimited on administracion_blob_tbs;
+
+alter user clientes_admin  quota unlimited on clientes_idx_tbs;
+alter user clientes_admin  quota unlimited on clientes_blob_tbs;
+alter user clientes_admin  quota unlimited on clientes_ecnrypt_tbs;
