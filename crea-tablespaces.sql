@@ -12,6 +12,13 @@
 --Extensiones de longitud variable? Bueno si los registros serán de long variable
 --Segment porque lo recomienda xd
 
+prompt Conectando como usuario sys
+connect sys/system as sysdba
+
+prompt Abrir el WALLET para tablespaces encriptados
+
+alter system set encryption wallet open identified by "wallet_password";
+
 --Tablespace módulo Administración
 create tablespace administracion_tbs
  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_tbs.dbf ' size 10m
@@ -26,7 +33,7 @@ create tablespace administracion_idx_tbs
   segment space management auto;
 
 create bigfile tablespace administracion_blob_tbs
-  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_idx_tbs.dbf ' size 100m
+  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_blob_tbs.dbf ' size 100m
   autoextend on next 10m
   extent management local autoallocate
   segment space management auto;
@@ -37,11 +44,9 @@ create bigfile tablespace administracion_blob_tbs
 --Tablespace módulo Clientes
 create tablespace clientes_tbs
  datafile '/u01/app/oracle/oradata/GACAPROY/disk_7/clientes_tbs_01.dbf' size 10m
- autoextend on next 10m
- extent management local autoallocate
- segment space management auto,
+          autoextend on next 10m,
           '/u01/app/oracle/oradata/GACAPROY/disk_8/clientes_tbs_02.dbf' size 10m
- autoextend on next 10m,
+          autoextend on next 10m
  extent management local autoallocate
  segment space management auto;
 
@@ -51,8 +56,9 @@ create tablespace clientes_idx_tbs
  extent management local autoallocate
  segment space management auto;
 
+ --drop tablespace clientes_blob_tbs including contents and datafiles;
 create bigfile tablespace clientes_blob_tbs
- datafile '/u01/app/oracle/oradata/GACAPROY/disk_8/administracion_idx_tbs.dbf ' size 100m
+ datafile '/u01/app/oracle/oradata/GACAPROY/disk_8/clientes_blob_tbs.dbf ' size 100m
  autoextend on next 10m
  extent management local autoallocate
  segment space management auto;
