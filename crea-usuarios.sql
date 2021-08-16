@@ -7,12 +7,12 @@ connect sys/system as sysdba
 
 --Estos usuarios se encargarán de administrar los TBS de su módulo
 --correspondiente
-Prompt Creando usuario gimnasios_admin
-create user gimnasios_admin identified by gimnasios
+Prompt Creando usuario administrador_gimnasios
+create user administrador_gimnasios identified by gimnasios
 default tablespace administracion_tbs quota unlimited on administracion_tbs;
 
-Prompt Creando usuario clientes_admin
-create user clientes_admin identified by clientes
+Prompt Creando usuario administrador_clientes
+create user administrador_clientes identified by clientes
 default tablespace clientes_tbs quota unlimited on clientes_tbs;
 
 
@@ -20,16 +20,17 @@ Prompt Creando rol admin
 create role rol_admin;
 
 grant create session, create table, create view, create procedure,
-  create sequence, create trigger, create index to rol_admin;
+  create sequence, create trigger to rol_admin;
+
 
 Prompt Asignamos rol a los usuarios
-grant rol_admin to gimnasios_admin;
-grant rol_admin to clientes_admin;
+grant rol_admin to administrador_gimnasios;
+grant rol_admin to administrador_clientes;
 
 
-alter user gimnasios_admin quota unlimited on administracion_idx_tbs;
-alter user gimnasios_admin quota unlimited on administracion_blob_tbs;
+alter user administrador_gimnasios quota unlimited on administracion_idx_tbs;
+alter user administrador_gimnasios quota unlimited on administracion_blob_tbs;
 
-alter user clientes_admin  quota unlimited on clientes_idx_tbs;
-alter user clientes_admin  quota unlimited on clientes_blob_tbs;
-alter user clientes_admin  quota unlimited on clientes_ecnrypt_tbs;
+alter user administrador_clientes  quota unlimited on clientes_idx_tbs;
+alter user administrador_clientes  quota unlimited on clientes_blob_tbs;
+alter user administrador_clientes  quota unlimited on clientes_ecnrypt_tbs;
