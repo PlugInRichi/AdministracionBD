@@ -100,9 +100,9 @@ create table empleado(
   nombre              varchar2(40)     not null,
   ap_paterno          varchar2(40)     not null,
   ap_materno          varchar2(40),
-  curp                varchar2(18)     not null ENCRYPT 'NOMAC',
+  curp                varchar2(18)     ENCRYPT USING 'AES256'  not null,
   num_trabajador      varchar2(10)     not null,
-  rfc                 varchar2(13)     not null ENCRYPT USING 'AES256',
+  rfc                 varchar2(13)     ENCRYPT USING 'AES256' not null,
   fecha_nacimiento    date             not null,
   email               varchar2(30)     not null,
   foto                blob             not null,
@@ -352,5 +352,5 @@ tablespace administracion_idx_tbs;
 create index hd_dispositivo_id_ix on historial_dispositivo(dispositivo_id)
 tablespace administracion_idx_tbs;
 
-create index hd_cliente_id_ix on historial_dispositivo(cliente_id)
+create index hd_estatus_id_ix on historial_dispositivo(estatus_id)
 tablespace administracion_idx_tbs;

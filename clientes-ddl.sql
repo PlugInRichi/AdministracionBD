@@ -157,8 +157,6 @@ tablespace clientes_tbs;
 
 
 -- Creación de índices
-create index sesion_cliente_id_ix on sala(cliente_id)
-tablespace clientes_idx_tbs;
 
 create index sesion_instructor_id_ix on sesion(instructor_id)
 tablespace clientes_idx_tbs;
@@ -172,7 +170,7 @@ tablespace clientes_idx_tbs;
 create index bitacora_sensor_id_ix on bitacora(sensor_id)
 tablespace clientes_idx_tbs;
 
-create unique index sensor_cliente_id_iuk sensor(cliente_id)
+create unique index sensor_cliente_id_iuk on sensor(cliente_id)
 tablespace clientes_idx_tbs;
 
 create index credencial_cliente_id_ix on credencial(cliente_id)
