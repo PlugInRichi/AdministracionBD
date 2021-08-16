@@ -51,8 +51,8 @@ create tablespace clientes_tbs
  segment space management auto;
 
 create tablespace clientes_idx_tbs
- datafile '/u01/app/oracle/oradata/GACAPROY/disk_7/clientes_idx_tbs_02.dbf' size 5m
- autoextend on next 5m,
+ datafile '/u01/app/oracle/oradata/GACAPROY/disk_7/clientes_idx_tbs.dbf' size 5m
+ autoextend on next 5m
  extent management local autoallocate
  segment space management auto;
 
