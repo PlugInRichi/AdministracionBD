@@ -15,7 +15,7 @@ GACAPROY_SHARED =
       (ADDRESS = (PROTOCOL = TCP)(HOST = pc-rgg.fi.unam)(PORT = 1521))
     )
     (CONNECT_DATA =
-      (SERVER = DEDICATED)
+      (SERVER = SHARED)
       (SERVICE_NAME = GACAPROY)
     )
 )
