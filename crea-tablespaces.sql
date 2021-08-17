@@ -19,21 +19,32 @@ prompt Abrir el WALLET para tablespaces encriptados
 
 alter system set encryption wallet open identified by "wallet_password";
 
+-- Borrado de tablespace si se habían creado previamente
+-- DROP tablespace ADMINISTRACION_TBS including contents and datafiles;
+-- DROP tablespace ADMINISTRACION_IDX_TBS including contents and datafiles;
+-- DROP tablespace ADMINISTRACION_BLOB_TBS including contents and datafiles;
+--
+-- DROP tablespace CLIENTES_TBS including contents and datafiles;
+-- DROP tablespace CLIENTES_IDX_TBS including contents and datafiles;
+-- DROP tablespace CLIENTES_BLOB_TBS including contents and datafiles;
+-- DROP tablespace CLIENTES_ECNRYPT_TBS including contents and datafiles;
+
+
 --Tablespace módulo Administración
 create tablespace administracion_tbs
- datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_tbs.dbf ' size 10m
+ datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_tbs.dbf' size 10m
  autoextend on next 10m
  extent management local autoallocate
  segment space management auto;
 
 create tablespace administracion_idx_tbs
-  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_idx_tbs.dbf ' size 5m
+  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_idx_tbs.dbf' size 5m
   autoextend on next 10m
   extent management local autoallocate
   segment space management auto;
 
 create bigfile tablespace administracion_blob_tbs
-  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_blob_tbs.dbf ' size 100m
+  datafile '/u01/app/oracle/oradata/GACAPROY/disk_6/administracion_blob_tbs.dbf' size 100m
   autoextend on next 10m
   extent management local autoallocate
   segment space management auto;
@@ -58,14 +69,14 @@ create tablespace clientes_idx_tbs
 
  --drop tablespace clientes_blob_tbs including contents and datafiles;
 create bigfile tablespace clientes_blob_tbs
- datafile '/u01/app/oracle/oradata/GACAPROY/disk_8/clientes_blob_tbs.dbf ' size 100m
+ datafile '/u01/app/oracle/oradata/GACAPROY/disk_8/clientes_blob_tbs.dbf' size 100m
  autoextend on next 10m
  extent management local autoallocate
  segment space management auto;
 
 --Tablespace encriptado para datos personales
  create tablespace clientes_ecnrypt_tbs
-  datafile '/u01/app/oracle/oradata/GACAPROY/disk_7/datos_personales_tbs.dbf ' size 10m
+  datafile '/u01/app/oracle/oradata/GACAPROY/disk_7/datos_personales_tbs.dbf' size 10m
   autoextend on next 10m
   extent management local autoallocate
   segment space management auto
