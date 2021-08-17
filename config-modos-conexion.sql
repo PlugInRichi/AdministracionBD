@@ -19,7 +19,7 @@ show parameter shared_servers
 alter system register;
 
 --Añade el nuevo archivo de tnsnames
-!cp tnsnames.ora /u01/app/oracle/product/19.3.0/dbhome_1/network/admin/tnsnames.ora
+--!cp tnsnames.ora /u01/app/oracle/product/19.3.0/dbhome_1/network/admin/tnsnames.ora
 
 -- Mostrar servicios registrados en el listener
 !lsnrctl services
