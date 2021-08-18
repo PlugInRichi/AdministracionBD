@@ -1,0 +1,22 @@
+connect target 'sys@GACAPROY as sysdba'
+
+# Activar optimizacion de backups
+configure backup optimization on;
+
+# Activamos el guardado en dos unidades de almacenamiento
+configure device type disk parallelism 2;
+
+# Establecemos el tipo de almacenamiento
+configure default device type to disk;
+
+# Copia al disco de Backups
+configure channel 1 device type disk format '/u01/app/oracle/oradata/GACAPROY/disk_9/bkp_%u';
+
+# sCopia a la FRA
+configure channel 2 device type disk format '';
+
+# Configurar politica de recovery
+configure retention policy to recovery window of 7 days;
+
+# Respaldo automático de controlfile en FRA
+configure controlfile autobackup format for device type disk clear;
