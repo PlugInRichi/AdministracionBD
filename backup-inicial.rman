@@ -1,0 +1,13 @@
+connect target 'sys@GACAPROY as sysdba'
+
+# Respaldo de spfile
+backup device type disk spfile;
+
+# Respaldo de archive
+backup database plus archivelog;
+
+# Respaldo incremental nivel 0;
+backup incremental level 0 database;
+
+# Respaldo incremental nivel 1 diferencial
+backup incremental level 1 database;
