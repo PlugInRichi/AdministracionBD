@@ -1,0 +1,15 @@
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (1, 'non', 'tempus sit amet sem fusce');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (2, 'nonummy maecenas', 'lacinia sapien quis');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (3, 'sed magna', 'elit sodales scelerisque');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (4, 'ut', 'est risus auctor sed tristique in');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (5, 'sit amet', 'id ornare imperdiet sapien');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (6, 'hendrerit at', 'ut erat id mauris vulputate');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (7, 'sapien non', 'congue diam id ornare imperdiet sapien');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (8, 'vel', 'mi pede malesuada in imperdiet');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (9, 'vel', 'nullam porttitor lacus at turpis');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (10, 'eget semper', 'vestibulum aliquet ultrices erat tortor');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (11, 'enim', 'nisi vulputate nonummy maecenas tincidunt lacus');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (12, 'duis at', 'eu nibh quisque id');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (13, 'semper interdum', 'viverra pede ac diam');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (14, 'libero rutrum', 'in quis justo maecenas');
+insert into tipo_dispositivo (tipo_dispositivo_id, nombre, descripcion) values (15, 'venenatis turpis', 'nunc rhoncus dui vel');

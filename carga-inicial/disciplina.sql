@@ -1,0 +1,10 @@
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (1, 'RXL', 'PDI', 'Suspendisse potenti.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (2, 'ZYK', 'Global Management', 'Morbi vestibulum, velit id pretium iaculis, diam.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (3, 'NAH', 'GWAPT', 'Proin at turpis a pede posuere nonummy.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (4, 'EFY', 'Natural Resources', 'Nulla mollis molestie lorem.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (5, 'LXR', 'HR', 'Quisque erat eros, viverra eget, congue eget.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (6, 'VOK', 'Spring MVC', 'In est risus, auctor sed, tristique in, sem.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (7, 'RZT', 'IEC 61131-3', 'Aliquam augue quam, sollicitudin vitae.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (8, 'CMG', 'DWR', 'Vestibulum quam sapien, varius ut, blandit non.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (9, 'DQC', 'Entity Framework', 'Maecenas rhoncus aliquam lacus.', empty_blob());
+insert into disciplina (disciplina_id, clave, nombre, descripcion, icono) values (10, 'QFT', 'ETFs', 'Curabitur gravida nisi at nibh.', empty_blob());
