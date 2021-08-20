@@ -56,6 +56,8 @@ prompt Actualizando contraseñas
 alter user sys identified by system;
 -- Actualiza contraseña de sysbackup
 alter user sysbackup identified by system;
+-- Desbloquea al usuario
+alter user sysbackup identified by system account unlock;
 
 prompt Creando wallet
 -- Creamos el Wallet
