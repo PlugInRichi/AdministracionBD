@@ -38,8 +38,10 @@ begin
   -- update
   v_count := 0;
   for r in cur_update loop
-    update cliente set direccion = 'Mi casa',
-      ap_materno = 'materno update', ap_paterno = 'paterno update'
+    update cliente set
+    nombre = r.nombre, ap_paterno = r.ap_paterno, ap_materno= r.ap_materno,
+    password = r.password, direccion = r.direccion,
+    fecha_nacimiento = r.fecha_nacimiento, foto = r.foto
       where cliente_id = (select trunc(dbms_random.value(1,v_max_id))from dual);
         v_count := v_count + sql%rowcount;
   end loop;
